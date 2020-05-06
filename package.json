@@ -1,0 +1,26 @@
+{
+  "name": "raygun-error-sort-bot",
+  "version": "0.0.1",
+  "description": "A slack app/bot to read raygun error notifications and repost to different teams based on some sorting algorithm",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FunnyHector/raygun-error-sort-bot.git"
+  },
+  "keywords": [
+    "Raygun",
+    "Slack App"
+  ],
+  "author": "hector.zhao@fluxfederation.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FunnyHector/raygun-error-sort-bot/issues"
+  },
+  "homepage": "https://github.com/FunnyHector/raygun-error-sort-bot#readme",
+  "dependencies": {
+    "@slack/bolt": "^2.0.1"
+  }
+}
