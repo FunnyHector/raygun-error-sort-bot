@@ -4,6 +4,7 @@
   "description": "A slack app/bot to read raygun error notifications and repost to different teams based on some sorting algorithm",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "test"
   },
   "repository": {
