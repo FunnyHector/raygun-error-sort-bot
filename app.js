@@ -3,7 +3,7 @@
 // Require the Bolt package (github.com/slackapi/bolt)
 const { App } = require('@slack/bolt');
 
-// import configs
+// Import configs
 const CONFIG = require('./config/config');
 
 // Construct the app
@@ -12,7 +12,7 @@ const app = new App({
   signingSecret: process.env.SLACK_SIGNING_SECRET,
 });
 
-// For showing home tab
+// Listen to the event of showing the app home tab
 require('./eventListeners/appHomeOpened')(app);
 
 // Find the triage strategy
@@ -23,7 +23,7 @@ if (CONFIG.triageStrategy == 'keyword') {
   throw 'invalid triage strategy! Check triageStrategy in config.';
 }
 
-// For receiving message
+// Listen to the event of receiving message
 require('./eventListeners/message')(app, CONFIG, triageStrategy);
 
 // Start the app

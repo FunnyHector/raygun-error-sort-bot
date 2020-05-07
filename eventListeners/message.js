@@ -15,38 +15,25 @@ module.exports = function (app, config, triageStrategy) {
    * 4. Also post to a channel which serves as the triage history.
    */
   app.message(async ({ message, say }) => {
-    // we don't care if it's not from the Raygun bot
-    // TODO: Uncomment this
-    // For testing, we don't check the
-    // if (message.subtype != "bot_message" && message.bot_id != config.raygunBotId) {
-    //   return;
-    // }
-
     // TODO: uncomment this
     // let messageTxt = retrieveNewError(message);
-    let messageTxt = await retrieveNewErrorFromAnyone(message);
+    let messageTxt = retrieveNewErrorFromAnyone(message);
 
-    console.log(`messageTxt: ${messageTxt}`);
-
-    // we don't care if it's not a new error message
+    // We don't care if it's not a new error message
     if (messageTxt == null) {
       return;
     }
 
-    let triageResult = await triageStrategy.triage(messageTxt);
+    // Triage!
+    let triageResult = triageStrategy.triage(messageTxt);
 
-    console.log('triageResult:');
-    console.log(triageResult);
-
-    // now we post the message
+    // Post the triage result
     let responseMessage = null;
     if (triageResult.keywordFound == null) {
       responseMessage = `No keyword found in the message. This goes to ${triageResult.group} :try_not_to_cry:`;
     } else {
-      responseMessage = `Found keyword ${triageResult.keywordFound} in the message, which belongs to ${triageResult.group}`;
+      responseMessage = `Found keyword *${triageResult.keywordFound}* in the error. This goes to ${triageResult.group}`;
     }
-
-    console.log(`responseMessage: ${responseMessage}`);
 
     await say(responseMessage);
   });
@@ -58,27 +45,29 @@ module.exports = function (app, config, triageStrategy) {
    * @returns the message text if it's a new error; null otherwise;
    */
   function retrieveNewError(message) {
-    // TODO
+    // We don't care if it's not from the Raygun bot
+    // if (message.subtype != "bot_message" && message.bot_id != config.raygunBotId) {
+    //   return;
+    // }
+
+    // TODO: Check the attachment. See example.json in examples folder.
   }
 
   /**
-   * Test function to retrieve the new error posted by anyone.
+   * Test function to retrieve a new error posted by anyone.
    *
-   * @param {*} message
+   * @param {*} message the message in the event. See https://api.slack.com/events/message
+   * @returns the message text if it's a new error; null otherwise;
    */
   function retrieveNewErrorFromAnyone(message) {
-    console.log("Enter retrieveNewErrorFromAnyone()");
-
+    // Some message doesn't have text part
     if (message.text == undefined) {
-      console.log("Exit retrieveNewErrorFromAnyone(), message.text == undefined, return null");
       return null;
     }
 
     if (newErrorTextPattern.every(keyword => message.text.includes(keyword))) {
-      console.log(`Exit retrieveNewErrorFromAnyone(), return ${message.text}`);
       return message.text;
     } else {
-      console.log("Exit retrieveNewErrorFromAnyone(), !startsWith(newErrorTextPattern), return null");
       return null;
     }
   }

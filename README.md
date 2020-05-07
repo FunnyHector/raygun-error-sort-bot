@@ -1,1 +1,3 @@
-TODO
+TODO:
+- finish this README
+- In README, clarify the before and after contract for strategy classes. They need to implement a triage function, which needs to return { keywordFound: "Foo", group: 'bar' }. Javascript doesn't have interfaces....
