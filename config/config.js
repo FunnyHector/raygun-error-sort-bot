@@ -5,5 +5,7 @@ module.exports = {
   // May not be needed.
   channelIdToMonitor: 'C012HCAMCAV',
   // The id of the Raygun bot. We only care about messages from this user.
-  RaygunBotId: 'B0126RJ6XDY',
+  raygunBotId: 'B0126RJ6XDY',
+  // The triage strategy we want to use.
+  triageStrategy: 'keyword',
 };

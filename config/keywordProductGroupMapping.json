@@ -1,0 +1,44 @@
+{
+  "mappings": [
+    {
+      "group": "Market & Switch",
+      "keywords": [
+        "switch",
+        "msats",
+        "smets",
+        "mra"
+      ]
+    },
+    {
+      "group": "Energy & Money",
+      "keywords": [
+        "txn",
+        "billing",
+        "reading",
+        "tariff",
+        "debt",
+        "debit",
+        "credit",
+        "plan"
+      ]
+    },
+    {
+      "group": "Engagement",
+      "keywords": [
+
+      ]
+    },
+    {
+      "group": "Mobile",
+      "keywords": [
+
+      ]
+    },
+    {
+      "group": "Platform",
+      "keywords": [
+        "Rails"
+      ]
+    }
+  ]
+}
