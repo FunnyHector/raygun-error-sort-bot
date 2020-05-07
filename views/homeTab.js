@@ -1,6 +1,6 @@
 'use strict';
 
-const HomeTabView = {
+module.exports = {
   type: "home",
   blocks: [
     {
@@ -24,5 +24,3 @@ const HomeTabView = {
     },
   ],
 }
-
-module.exports = HomeTabView;

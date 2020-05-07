@@ -1,0 +1,67 @@
+{
+  "type": "message",
+  "subtype": "bot_message",
+  "text": "",
+  "ts": "1588823998.015100",
+  "bot_id": "B0126RJ6XDY",
+  "thread_ts": "1588823998.015100",
+  "reply_count": 6,
+  "reply_users_count": 2,
+  "latest_reply": "1588825788.016300",
+  "reply_users": [
+    "U0X30LBE3",
+    "U8SGGLKL0"
+  ],
+  "subscribed": false,
+  "attachments": [
+    {
+      "fallback": ":bell: *New error:* <https:\/\/app.raygun.com\/crashreporting\/17jvzqz\/errors\/4567133027?correlationId=305449527016&amp;occurredOn=2020-05-07T03:59:52.0000000Z#62155220237|undefined method downcase' for nil:NilClass>",
+      "text": ":bell: *New error:* <https:\/\/app.raygun.com\/crashreporting\/17jvzqz\/errors\/4567133027?correlationId=305449527016&amp;occurredOn=2020-05-07T03:59:52.0000000Z#62155220237|undefined method downcase' for nil:NilClass>",
+      "id": 1,
+      "color": "a30200",
+      "fields": [
+        {
+          "title": "",
+          "value": "*Application:* <https:\/\/app.raygun.com\/crashreporting\/17jvzqz|Core App [Production]>",
+          "short": false
+        },
+        {
+          "title": "",
+          "value": "*Tags:* <https:\/\/app.raygun.com\/crashreporting\/17jvzqz?filterBy=Tag&amp;#9552;application:merx-prod-app|application:merx-prod-app>, <https:\/\/app.raygun.com\/crashreporting\/17jvzqz?filterBy=Tag&amp;#9552;country:nz|country:nz>, <https:\/\/app.raygun.com\/crashreporting\/17jvzqz?filterBy=Tag&amp;#9552;root_domain:meridianenergy.co.nz|root_domain:meridianenergy.co.nz>, <https:\/\/app.raygun.com\/crashreporting\/17jvzqz?filterBy=Tag&amp;#9552;environment_label:production|environment_label:production>",
+          "short": true
+        }
+      ]
+    },
+    {
+      "callback_id": "errorActions",
+      "id": 2,
+      "color": "a30200",
+      "actions": [
+        {
+          "id": "1",
+          "name": "Action",
+          "text": "Resolve",
+          "type": "button",
+          "value": "Resolve",
+          "style": ""
+        },
+        {
+          "id": "2",
+          "name": "Action",
+          "text": "Ignore",
+          "type": "button",
+          "value": "Ignore",
+          "style": ""
+        },
+        {
+          "id": "3",
+          "name": "Action",
+          "text": "Assign to me",
+          "type": "button",
+          "value": "Assign",
+          "style": ""
+        }
+      ]
+    }
+  ]
+}
