@@ -4,11 +4,16 @@
 const { App } = require("@slack/bolt");
 const HomeTabView = require("./views/homeTab.js");
 
+// import configs
+const CONFIG = require("./config/config.js");
+
+// Construct the app
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
   signingSecret: process.env.SLACK_SIGNING_SECRET,
 });
 
+// For showing home tab
 app.event("app_home_opened", async ({ event, context }) => {
   try {
     /* view.publish is the method that your app uses to push a view to the Home tab */
@@ -25,6 +30,11 @@ app.event("app_home_opened", async ({ event, context }) => {
   } catch (error) {
     console.error(error);
   }
+});
+
+// For receiving message
+app.message(':wave:', async ({ message, say }) => {
+  await say(`Hello, <@${message.user}>`);
 });
 
 (async () => {
